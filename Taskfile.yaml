@@ -1,0 +1,21 @@
+version: 3
+
+includes:
+  app:
+    taskfile: ./app/Taskfile.yaml
+    dir: ./app
+
+tasks:
+  tilt:up:
+  - tilt up
+
+  k3d:create:
+  - k3d cluster create pav --registry-create registry.localhost:127.0.0.1:5000
+  # create registry will be called k3d-registry.localhost
+  # it is possible to create registry separately - k3d registry create myregistry.localhost --port 12345
+  # and then k3d cluster create newcluster --registry-use k3d-myregistry.localhost:12345 
+
+  k3d:delete:
+  - k3d cluster delete pav
+
+# source .env

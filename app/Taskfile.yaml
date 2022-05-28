@@ -1,0 +1,49 @@
+version: 3
+
+tasks:
+  install:venv:
+  - pip install --user virtualenv
+
+  install:pip:
+  - sudo apt install python3-pip -y
+
+  install:requirements:
+  - pip install -r requirements.txt
+
+  start:
+  - python3 api.py
+
+  venv:
+  - virtualenv -p python3 venv
+
+  container:build:
+    vars: 
+      VERSION: "{{ .VERSION }}"
+    cmds:
+      - docker build . --tag pav:"{{ .VERSION }}"
+    preconditions:
+    - VERSION={{ .VERSION }}; test ! -z ${VERSION}
+
+  container:start:
+  - docker run --rm --name pav -p 5000:5000 pav:0.0.1 
+
+  container:tag:
+    deps:
+    - task: container:build
+      vars: 
+        VERSION: "{{ .VERSION }}"
+    cmds:
+    - docker tag pav:{{ .VERSION }} witcherek7/pav:{{ .VERSION }}
+    - docker tag pav:{{ .VERSION }} witcherek7/pav:latest
+    preconditions:
+    - VERSION={{ .VERSION }}; test ! -z ${VERSION}
+
+  container:push:
+    deps:
+    - task: container:tag
+      vars:
+        VERSION: "{{ .VERSION }}"
+    cmds:
+    - docker push witcherek7/pav
+    preconditions:
+    - VERSION={{ .VERSION }}; test ! -z ${VERSION}
