@@ -1,8 +1,12 @@
 apiVersion: v2
 name: pav
 version: 0.0.1
-appVersion: 0.0.1
+appVersion: 0.0.2
 dependencies:
   - name: common
     repository: https://library-charts.truecharts.org
     version: '9.3.x'
+  - name: argus
+    repository: https://krzwiatrzyk.github.io/charts/
+    version: '0.0.x'
+    condition: extensions.argus

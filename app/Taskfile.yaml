@@ -44,6 +44,7 @@ tasks:
       vars:
         VERSION: "{{ .VERSION }}"
     cmds:
-    - docker push witcherek7/pav
+    - docker push witcherek7/pav:{{ .VERSION }}
+    - docker push witcherek7/pav:latest
     preconditions:
     - VERSION={{ .VERSION }}; test ! -z ${VERSION}

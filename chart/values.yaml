@@ -2,9 +2,15 @@ apps:
   app1: 1.0.0
   app2: 2.0.0
 
+extensions:
+  argus: false
+
+argus:
+  config:
+
 image:
-  repository: krzwiatrzyk/pav
-  tag: 0.0.1
+  repository: witcherek7/pav
+  tag: 0.0.2
 
 service:
   main:
