@@ -1,6 +1,11 @@
 # PAV - Python Api Version
 
 [![CodeFactor](https://www.codefactor.io/repository/github/krzwiatrzyk/pav/badge)](https://www.codefactor.io/repository/github/krzwiatrzyk/pav)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=krzwiatrzyk_pav&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=krzwiatrzyk_pav)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=krzwiatrzyk_pav&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=krzwiatrzyk_pav)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=krzwiatrzyk_pav&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=krzwiatrzyk_pav)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=krzwiatrzyk_pav&metric=bugs)](https://sonarcloud.io/summary/new_code?id=krzwiatrzyk_pav)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=krzwiatrzyk_pav&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=krzwiatrzyk_pav)
 
 ## Overview
 
