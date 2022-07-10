@@ -5,4 +5,4 @@ appVersion: 0.0.2
 dependencies:
   - name: common
     repository: https://library-charts.truecharts.org
-    version: '9.3.x'
+    version: '10.4.x'
